@@ -8,7 +8,7 @@ archivos con el sidebar del tema
 */
 
 ?>
-<aside class="sidebar-principal">
+<aside class="sidebar-principal sticky">
 
 
   <?php if ( is_single() ): ?>

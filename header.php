@@ -136,7 +136,7 @@ archivos con el encabezado del tema
 
       </div> <!-- /Top header -->
 
-      <div class="menu-bar">
+      <div class="menu-bar sticky">
         <a href="<?php echo home_url(); ?>" class="logo-container">
           <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>">
           <?php if ($show_page_title == true): ?>
