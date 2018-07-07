@@ -63,6 +63,38 @@
         </div>
       </section> <!-- Slider -->
 
+      <!-- About us -->
+      <section class="blurbs bg-grey">
+                <div class="contenedor">
+                      <div class="contenido-seccion">
+                            <div class="about">
+                              <div class="titulo-about">
+                                    <h1>Conococenos un poco</h1>
+                              </div>
+                                  <div class="titulo-destacado">
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            . Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                            mollit anim id est laborum.
+                                        </p>
+                                        
+
+                                        <p class="container-btn">
+                                            <a  href="#" class="link-btn">Conocer más</a>
+                                        </p>
+                                  </div>
+                            </div>
+
+                            <div class="about">
+                                  <img src="<?php echo RutaImagenes; ?>/slide1.jpg" alt="">
+                            </div>
+
+                      </div>
+
+                </div>
+      </section>
+      <!-- End about us -->
+
       <?php require_once('includes/options-homepage.php') ?>
 
        <?php if ($show_blurbs_section == true): ?>
