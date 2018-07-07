@@ -72,6 +72,33 @@ archivos con el encabezado del tema
 
         }
 
+        //Enlace YouTube
+        if ( !empty($options['youtube_link']) ) {
+
+            $youtube_link = $options['youtube_link'];
+
+        }
+
+        //Enlace SnapChat
+        if ( !empty($options['snap_link']) ) {
+
+            $snap_link = $options['snap_link'];
+
+        }
+        //Enlace Whatsapp
+        if ( !empty($options['whatsapp_link']) ) {
+
+            $whatsapp_link = $options['whatsapp_link'];
+
+        }
+
+        //Enlace linkedin
+        if ( !empty($options['linkedin_link']) ) {
+
+            $linkedin_link = $options['linkedin_link'];
+
+        }
+
         // Logo
 
         if ( !empty($options['logo']) ) {
@@ -107,9 +134,9 @@ archivos con el encabezado del tema
            <?php endif; ?>
         </div>
 
-        <div class="search-container">
+        <!-- <div class="search-container">
           <?php get_search_form(); ?>
-        </div>
+        </div> -->
 
         <div class="top-redes">
           <?php if ( isset($facebook_link) ): ?>
@@ -129,6 +156,31 @@ archivos con el encabezado del tema
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           <?php endif; ?>
+
+          <?php if (isset($youtube_link)): ?>
+            <a href="<?php echo esc_url($youtube_link); ?>">
+              <i class="fa fa-youtube" aria-hidden="true"></i>
+            </a>
+          <?php endif; ?>
+
+          <?php if (isset($snap_link)): ?>
+            <a href="<?php echo esc_url($snap_link); ?>">
+              <i class="fa fa-snapchat" aria-hidden="true"></i>
+            </a>
+          <?php endif; ?>
+
+          <?php if (isset($whatsapp_link)): ?>
+            <a href="<?php echo esc_url($whatsapp_link); ?>">
+              <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          <?php endif; ?>
+
+          <?php if (isset($linkedin_link)): ?>
+            <a href="<?php echo esc_url($linkedin_link); ?>">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          <?php endif; ?>
+
 
 
 
@@ -159,7 +211,7 @@ archivos con el encabezado del tema
           <div class="top-redes">
             <?php if (isset ($facebook_link)): ?>
               <a href="<?php echo esc_url($facebook_link);?>">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <i class="fa fa-facebook fa-5x" aria-hidden="true"></i>
               </a>
             <?php endif; ?>
 

@@ -126,6 +126,57 @@
          </section> <!-- /Blurbs -->
        <?php endif; ?>
 
+       <section class="blurbs bg-grey">
+                <div class="contenedor">
+                      <div class="titulo-seccion">
+                            <h3>Nuestros trabajos</h3>
+                            <p>realizamos los mejores trabajos para hacer crecer su empresa</p>
+                      </div>
+
+                      <div class="contenido-seccion">
+                            <div class="project ">
+                              <img src="<?php echo $first_bluerb_image;?>" alt="">
+                              <div class="overlay"></div>
+                              <div class="porfolio-content">
+                                  <span>Proyecto 1</span>
+                                  <h1>Plantas medicinales</h1>
+                                  <div class="porfolio-link">
+                                        <a href="#"><i class="fa fa-external-link"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+
+                            <div class="project ">
+                              <img src="<?php echo $first_bluerb_image;?>" alt="">
+                              <div class="overlay"></div>
+                              <div class="porfolio-content">
+                                  <span>Proyecto 1</span>
+                                  <h1>Plantas medicinales</h1>
+                                  <div class="porfolio-link">
+                                        <a href="#"><i class="fa fa-external-link"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+
+                            <div class="project ">
+                              <img src="<?php echo $first_bluerb_image;?>" alt="">
+                              <div class="overlay"></div>
+                              <div class="porfolio-content">
+                                  <span>Proyecto 1</span>
+                                  <h1>Plantas medicinales</h1>
+                                  <div class="porfolio-link">
+                                        <a href="#"><i class="fa fa-external-link"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+                      </div>
+
+                </div>
+       </section>
+
        <?php if ($show_last_post_section == true): ?>
          <section class="ultimos-articulos">
            <div class="contenedor">

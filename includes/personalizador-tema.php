@@ -61,7 +61,7 @@ function code_customize_regiser($wp_customize){
 
     $wp_customize-> add_control('facebook_link', array(
 
-      'label' => __('Enlace a pagina de facebook', 'slan'),
+      'label' => __('Enlace a página de facebook', 'slan'),
       'section' => 'code_header_top',
       'settings'=>'code_settings[facebook_link]'
     ));
@@ -76,7 +76,7 @@ function code_customize_regiser($wp_customize){
 
     $wp_customize-> add_control('twitter_link', array(
 
-      'label' => __('Enlace a pagina de twitter', 'slan'),
+      'label' => __('Enlace a página de twitter', 'slan'),
       'section' => 'code_header_top',
       'settings'=>'code_settings[twitter_link]'
     ));
@@ -92,10 +92,75 @@ function code_customize_regiser($wp_customize){
 
     $wp_customize-> add_control('instagram_link', array(
 
-      'label' => __('Enlace a pagina de Instagram', 'slan'),
+      'label' => __('Enlace a página de Instagram', 'slan'),
       'section' => 'code_header_top',
       'settings'=>'code_settings[instagram_link]'
     ));
+
+    /**---------------------------------------------
+    ENLACES instagram
+    ---------------------------------------------*/
+    $wp_customize-> add_setting('code_settings[youtube_link]', array(
+
+      'default' => '',
+      'type' => 'theme_mod'
+    ));
+
+    $wp_customize-> add_control('youtube_link', array(
+
+      'label' => __('Enlace a página de YouTube', 'slan'),
+      'section' => 'code_header_top',
+      'settings'=>'code_settings[youtube_link]'
+    ));
+
+    /**---------------------------------------------
+    ENLACES SnapChat
+    ---------------------------------------------*/
+    $wp_customize-> add_setting('code_settings[snap_link]', array(
+
+      'default' => '',
+      'type' => 'theme_mod'
+    ));
+
+    $wp_customize-> add_control('snap_link', array(
+
+      'label' => __('Enlace a página de SnapChat', 'slan'),
+      'section' => 'code_header_top',
+      'settings'=>'code_settings[snap_link]'
+    ));
+
+    /**---------------------------------------------
+    ENLACES WhatsApp
+    ---------------------------------------------*/
+    $wp_customize-> add_setting('code_settings[whatsapp_link]', array(
+
+      'default' => '',
+      'type' => 'theme_mod'
+    ));
+
+    $wp_customize-> add_control('whatsapp_link', array(
+
+      'label' => __('Enlace a página de WhatsApp', 'slan'),
+      'section' => 'code_header_top',
+      'settings'=>'code_settings[whatsapp_link]'
+    ));
+
+    /**---------------------------------------------
+    ENLACES LinkedIn
+    ---------------------------------------------*/
+    $wp_customize-> add_setting('code_settings[linkedin_link]', array(
+
+      'default' => '',
+      'type' => 'theme_mod'
+    ));
+
+    $wp_customize-> add_control('linkedin_link', array(
+
+      'label' => __('Enlace a página de LinkedIn', 'slan'),
+      'section' => 'code_header_top',
+      'settings'=>'code_settings[linkedin_link]'
+    ));
+
 
     /***************************************
     Encabezado normal
@@ -143,8 +208,8 @@ function code_customize_regiser($wp_customize){
     ---------------------------------------------*/
       $wp_customize-> add_panel('code_footer_panel', array(
 
-        'title' => __('pie de pagina','slan'),
-        'description' => __('Opciones del pie de pagina','slan'),
+        'title' => __('pie de página','slan'),
+        'description' => __('Opciones del pie de página','slan'),
         'priority' => 125
       ));
 
@@ -205,7 +270,7 @@ function code_customize_regiser($wp_customize){
       ---------------------------------------------*/
       $wp_customize-> add_section('code_botton_footer', array(
 
-          'title' => __('Pie de pagina inferior','slan'),
+          'title' => __('Pie de página inferior','slan'),
           'priority' => 11,
           'panel'=>'code_footer_panel'
         ));
@@ -218,7 +283,7 @@ function code_customize_regiser($wp_customize){
 
         $wp_customize-> add_control('code_botton_footer_text', array(
 
-          'label' => __('Texto de pie de pagina inferior', 'slan'),
+          'label' => __('Texto de pie de página inferior', 'slan'),
           'section' => 'code_botton_footer',
           'settings'=>'code_settings[code_botton_footer_text]'
         ));
@@ -256,7 +321,7 @@ function code_customize_regiser($wp_customize){
           $wp_customize-> add_panel('code_homepage_panel', array(
 
               'title' => __('HomePage','slan'),
-              'description' => __('Opciones de la plantilla de la pagina de inicio','slan'),
+              'description' => __('Opciones de la plantilla de la página de inicio','slan'),
               'priority' => 37
 
             ));
