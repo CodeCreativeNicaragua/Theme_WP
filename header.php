@@ -122,9 +122,9 @@ archivos con el encabezado del tema
       ?>
 
     <!-- Header -->
-    <header>
+    <header >
 
-      <div class="top-header">
+      <div class="top-header ">
 
         <div class="top-text">
           <?php if (isset($top_header_tex)): ?>
@@ -188,7 +188,7 @@ archivos con el encabezado del tema
 
       </div> <!-- /Top header -->
 
-      <div class="menu-bar sticky">
+      <div class="menu-bar">
         <a href="<?php echo home_url(); ?>" class="logo-container">
           <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>">
           <?php if ($show_page_title == true): ?>
@@ -209,23 +209,48 @@ archivos con el encabezado del tema
             <i id="iconoCerrarMenu" class="fa fa-arrow-left" aria-hidden="true"></i>
           </div>
           <div class="top-redes">
-            <?php if (isset ($facebook_link)): ?>
-              <a href="<?php echo esc_url($facebook_link);?>">
-                  <i class="fa fa-facebook fa-5x" aria-hidden="true"></i>
+            <?php if ( isset($facebook_link) ): ?>
+              <a href="<?php echo esc_url($facebook_link); ?>">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
             <?php endif; ?>
 
-            <?php if (isset ($twitter_link)): ?>
+            <?php if (isset($twitter_link)): ?>
               <a href="<?php echo esc_url($twitter_link);?>">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
             <?php endif; ?>
 
-            <?php if (isset ($instagram_link)): ?>
+            <?php if (isset($instagram_link)): ?>
               <a href="<?php echo esc_url($instagram_link);?>">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             <?php endif; ?>
+
+            <?php if (isset($youtube_link)): ?>
+              <a href="<?php echo esc_url($youtube_link); ?>">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            <?php endif; ?>
+
+            <?php if (isset($snap_link)): ?>
+              <a href="<?php echo esc_url($snap_link); ?>">
+                <i class="fa fa-snapchat" aria-hidden="true"></i>
+              </a>
+            <?php endif; ?>
+
+            <?php if (isset($whatsapp_link)): ?>
+              <a href="<?php echo esc_url($whatsapp_link); ?>">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            <?php endif; ?>
+
+            <?php if (isset($linkedin_link)): ?>
+              <a href="<?php echo esc_url($linkedin_link); ?>">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            <?php endif; ?>
+
 
 
 

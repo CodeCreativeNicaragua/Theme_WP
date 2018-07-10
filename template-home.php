@@ -77,7 +77,7 @@
                                             . Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
                                             mollit anim id est laborum.
                                         </p>
-                                        
+
 
                                         <p class="container-btn">
                                             <a  href="#" class="link-btn">Conocer más</a>
@@ -206,6 +206,18 @@
                             </div>
                       </div>
 
+                </div>
+       </section>
+
+       <section class="llamada-accion">
+                <div class="contenedor">
+                      <div class="texto">
+                            <p>Texto de llamado a la acción</p>
+                      </div>
+
+                      <div class="boton">
+                            <a href="#">Contactar</a>
+                      </div>
                 </div>
        </section>
 

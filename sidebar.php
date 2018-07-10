@@ -8,8 +8,8 @@ archivos con el sidebar del tema
 */
 
 ?>
-<aside class="sidebar-principal sticky">
-
+<aside class="sidebar-principal">
+<div class="sticky">
 
   <?php if ( is_single() ): ?>
     <div class="widget article-header">
@@ -31,6 +31,7 @@ archivos con el sidebar del tema
 
   </div><!-- /article-header -->
   <?php endif; ?>
+  <div class="sticky">
   <?php if (is_active_sidebar('main-sidebar')) {
 
     dynamic_sidebar('main-sidebar');
@@ -40,5 +41,7 @@ archivos con el sidebar del tema
     <?php get_search_form();?>
   </div>
   <?php } ?>
+</div>
 
+</div>
 </aside> <!-- /sidebar-principal -->
