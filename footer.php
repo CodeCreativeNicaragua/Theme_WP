@@ -8,48 +8,9 @@ archivos con el footer del tema del tema
 */
 
 ?>
+<footer>
 
-<?php
-    $options = get_theme_mod('code_settings');
-
-    if (!empty($options['call_to_action_text'])) {
-      $call_to_action_text = $options['call_to_action_text'];
-    }
-
-    if (!empty($options['call_to_action_text_btn_text'])) {
-      $call_to_action_text_btn_text = $options['call_to_action_text_btn_text'];
-    }
-
-    if (!empty($options['call_to_action_text_btn_link'])) {
-      $call_to_action_text_btn_link = $options['call_to_action_text_btn_link'];
-    }
-
-    if (!empty($options['code_botton_footer_text'])) {
-      $code_botton_footer_text = $options['code_botton_footer_text'];
-    }
- ?>
-    <!-- Footer -->
-    <footer>
-
-      <section class="llamada-accion">
-        <div class="contenedor">
-          <?php if (isset($call_to_action_text)): ?>
-              <div class="texto">
-                  <p><?php echo $call_to_action_text; ?></p>
-              </div>
-          <?php endif; ?>
-
-          <?php if (isset($call_to_action_text_btn_link)): ?>
-              <div class="boton">
-                  <a href="<?php echo esc_url($call_to_action_text_btn_link); ?>"><?php echo $call_to_action_text_btn_text; ?></a>
-              </div>
-          <?php endif; ?>
-
-        </div>
-
-      </section> <!-- /.llamada-accion -->
-
-      <section class="footer-widgets">
+  <section class="footer-widgets">
         <div class="contenedor">
 
           <div class="contenedor-widget">
@@ -78,15 +39,14 @@ archivos con el footer del tema del tema
 
 
         </div>
-      </section> <!-- /.footer-widgets -->
-      <?php if (isset($code_botton_footer_text) ): ?>
-        <section class="bottom-footer">
-          <div class="contenedor">
-            <p><?php echo $code_botton_footer_text; ?></p>
-          </div>
-        </section> <!-- /.bottom-footer -->
-      <?php endif; ?>
+      </section>
+       <!-- /.footer-widgets -->
 
+         <section class="bottom-footer">
+           <div class="contenedor">
+             <p>Proudly developed by <a href="codecreativenicaragua.com">Code Creative</a></p>
+           </div>
+         </section> <!-- /.bottom-footer -->
 
     </footer> <!-- /Footer -->
 

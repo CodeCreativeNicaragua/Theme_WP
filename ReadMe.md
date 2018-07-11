@@ -1,5 +1,5 @@
 # Tema Wordpress
 
-Tema completamente dinamica, totalmente persolizable.
+Tema completamente dinamica desarrollado en Wordpress, totalmente persolizable para cualquier tipo de negocio
 
 # # Responsive design.

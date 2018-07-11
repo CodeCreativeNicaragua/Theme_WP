@@ -124,6 +124,7 @@ archivos con el encabezado del tema
     <!-- Header -->
     <header >
 
+
       <div class="top-header ">
 
         <div class="top-text">
@@ -187,7 +188,7 @@ archivos con el encabezado del tema
         </div>
 
       </div> <!-- /Top header -->
-
+      
       <div class="menu-bar">
         <a href="<?php echo home_url(); ?>" class="logo-container">
           <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>">

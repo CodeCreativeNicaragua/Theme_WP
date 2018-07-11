@@ -103,11 +103,11 @@
            <div class="contenedor">
 
              <?php if (isset( $blurbs_section_title) || isset($blurbs_section_subtitle) ): ?>
-               <div class="titulo-seccion">
+               <div class="titulo-seccions">
 
                  <?php if (isset($blurbs_section_title)): ?>
 
-                   <h3><?php echo $blurbs_section_title; ?></h3>
+                   <h1><?php echo $blurbs_section_title; ?></h1>
 
                  <?php endif; ?>
 
@@ -160,8 +160,8 @@
 
        <section class="blurbs bg-grey">
                 <div class="contenedor">
-                      <div class="titulo-seccion">
-                            <h3>Nuestros trabajos</h3>
+                      <div class="titulo-seccions">
+                            <h1>Nuestros trabajos</h1>
                             <p>realizamos los mejores trabajos para hacer crecer su empresa</p>
                       </div>
 
@@ -221,15 +221,29 @@
                 </div>
        </section>
 
+       <section class="sections">
+                <div class="contenedor">
+                      <div class="titulo-seccions">
+                            <h1>Testimonios de nuestros clientes</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                      </div>
+
+                      <div class="contenido-sections">
+
+                      </div>
+                      </div>
+                </div>
+       </section>
+
        <?php if ($show_last_post_section == true): ?>
          <section class="ultimos-articulos">
            <div class="contenedor">
              <?php if (isset( $last_post_section_tittle) || isset($last_post_section_subtittle) ): ?>
-               <div class="titulo-seccion">
+               <div class="titulo-seccions">
 
                  <?php if (isset($last_post_section_tittle)): ?>
 
-                   <h3><?php echo $last_post_section_tittle; ?></h3>
+                   <h1><?php echo $last_post_section_tittle; ?></h1>
 
                  <?php endif; ?>
 
@@ -284,8 +298,82 @@
 
        </section>
 
+       <?php
+           $options = get_theme_mod('code_settings');
+
+           if (!empty($options['call_to_action_text'])) {
+             $call_to_action_text = $options['call_to_action_text'];
+           }
+
+           if (!empty($options['call_to_action_text_btn_text'])) {
+             $call_to_action_text_btn_text = $options['call_to_action_text_btn_text'];
+           }
+
+           if (!empty($options['call_to_action_text_btn_link'])) {
+             $call_to_action_text_btn_link = $options['call_to_action_text_btn_link'];
+           }
+
+           if (!empty($options['code_botton_footer_text'])) {
+             $code_botton_footer_text = $options['code_botton_footer_text'];
+           }
+        ?>
+
+             <section class="llamada-accion">
+               <div class="contenedor">
+                 <?php if (isset($call_to_action_text)): ?>
+                     <div class="texto">
+                         <p><?php echo $call_to_action_text; ?></p>
+                     </div>
+                 <?php endif; ?>
+
+                 <?php if (isset($call_to_action_text_btn_link)): ?>
+                     <div class="boton">
+                         <a href="<?php echo esc_url($call_to_action_text_btn_link); ?>"><?php echo $call_to_action_text_btn_text; ?></a>
+                     </div>
+                 <?php endif; ?>
+
+               </div>
+
+             </section> <!-- /.llamada-accion 2 -->
+
+
+
+      <section class="sections">
+                <div class="contenedor">
+                      <div class="titulo-seccions">
+                            <h1>Contacto</h1>
+                            <p>lorem impusn</p>
+                      </div>
+                      <div class="contenido-sections">
+                          <div class="about">
+                                <div class="contact">
+                                      <i class="fa fa-phone"></i>
+                                      <p>(505) 87379055</p>
+                                      <p>(505) 82724327</p>
+                                </div>
+
+                                <div class="contact">
+                                      <i class="fa fa-envelope"></i>
+                                      <p>example@correo.com</p>
+
+                                </div>
+
+                                <div class="contact">
+                                      <i class="fa fa-map-marker"></i>
+                                      <p>New York City. P 318 </p>
+
+                                </div>
+                          </div>
+
+                          <div class="about">
+                              <?php if ( is_active_sidebar('contact-widget')) {
+                                      dynamic_sidebar('contact-widget');
+                              } ?>
+                          </div>
+                      </div>
+                </div>
+      </section>
 
       <?php get_footer(); ?>
-
   </body>
 </html>
