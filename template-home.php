@@ -153,6 +153,10 @@
                  </div>
                </article>
 
+               <p class="container-btn">
+                   <a  href="#" class="link-btn">Conocer más</a>
+               </p>
+
              </div>  <!-- /Contenido sección -->
            </div>
          </section> <!-- /Blurbs -->
@@ -204,8 +208,12 @@
                                   </div>
                               </div>
                             </div>
-                      </div>
 
+
+                            <p class="container-btn">
+                                <a  href="#" class="link-btn">Conocer más</a>
+                            </p>
+                      </div>
                 </div>
        </section>
 
