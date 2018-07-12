@@ -10,7 +10,7 @@
 
 function code_new_metabox_home(){
 
-    add_meta_box('datos-home', __('Datos en la pagina de inicio','slan'), 'code_metabox_home', 'page', 'normal','high');
+    add_meta_box('datos-home', __('Datos en la página de inicio','slan'), 'code_metabox_home', 'page', 'normal','high');
 }
 
 add_action('add_meta_boxes', 'code_new_metabox_home');
@@ -25,22 +25,22 @@ array(
   ),
 
 array(
-    'label' => __('SubTitulo Destacado', 'slan'),
-    'description' => __('Ingrese el SubTitulo destacado del sitio', 'slan'),
+    'label' => __('Subtitulo destacado', 'slan'),
+    'description' => __('Ingrese el subtitulo destacado del sitio', 'slan'),
     'id' => 'SubTitulo_destacado',
     'type' => 'text'
     ),
 
 array(
-    'label' => __('Texto del boton', 'slan'),
-    'description' => __('Ingrese texto del boton', 'slan'),
+    'label' => __('Texto del botón', 'slan'),
+    'description' => __('Ingrese texto del botón', 'slan'),
     'id' => 'Texto_del_boton_destacado',
     'type' => 'text'
     ),
 
 array(
     'label' => __('Enlace del boton', 'slan'),
-    'description' => __('Ingrese el enlace que tendra del boton', 'slan'),
+    'description' => __('Ingrese el enlace que tendra del botón', 'slan'),
     'id' => 'link_boton_destacado',
     'type' => 'text'
     )

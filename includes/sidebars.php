@@ -10,9 +10,9 @@ area para los wigets
 function code_sidebars(){
 
   register_sidebar(array(
-  'name'          => __( 'Barra lateral', 'slan' ),
+  'name'          => __( 'Zona lateral del blog', 'slan' ),
 	'id'            => 'main-sidebar',    // ID should be LOWERCASE  ! ! !
-	'description'   => __( 'esta es la zona de widgets principal;' ),
+	'description'   => __( 'Esta es la zona de widgets principal;' ),
   'class'         => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
@@ -21,9 +21,9 @@ function code_sidebars(){
   ));
 
   register_sidebar(array(
-  'name'          => __( 'Pie de pagina zona izquierda', 'slan' ),
+  'name'          => __( 'Widget de Pie de página izquierda', 'slan' ),
 	'id'            => 'footer-widget-izq',    // ID should be LOWERCASE  ! ! !
-	'description'   => __( 'esta es la zona de widgets izquierda en el pie de pagina;' ),
+	'description'   => __( 'Esta es la zona de widgets izquierda en el pie de página;' ),
   'class'         => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
@@ -32,9 +32,9 @@ function code_sidebars(){
   ));
 
   register_sidebar(array(
-  'name'          => __( 'Pie de pagina zona central', 'slan' ),
+  'name'          => __( 'Widget de Pie de página central', 'slan' ),
 	'id'            => 'footer-widget-centro',    // ID should be LOWERCASE  ! ! !
-	'description'   => __( 'esta es la zona de widgets central en el pie de pagina;' ),
+	'description'   => __( 'Esta es la zona de widgets central en el pie de página;' ),
   'class'         => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
@@ -43,9 +43,9 @@ function code_sidebars(){
   ));
 
   register_sidebar(array(
-  'name'          => __( 'Pie de pagina zona derecha', 'slan' ),
+  'name'          => __( 'Widget de Pie de página derecha', 'slan' ),
 	'id'            => 'footer-widget-der',    // ID should be LOWERCASE  ! ! !
-	'description'   => __( 'esta es la zona de widgets derecha en el pie de pagina;' ),
+	'description'   => __( 'Esta es la zona de widgets derecha en el pie de página;' ),
   'class'         => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',

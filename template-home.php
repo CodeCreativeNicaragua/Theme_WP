@@ -15,7 +15,7 @@
 */
 ?>
     <?php get_header(); ?>
-
+      <?php require_once('includes/options-homepage.php') ?>
       <!-- Slider -->
       <section class="slider-principal">
         <div class="slider" id="slider">
@@ -31,10 +31,10 @@
               <?php endif; ?>
           <?php endwhile; else: ?>
 
-          <img src="<?php echo RutaImagenes; ?>/slide1.jpg" alt="">
-          <img src="<?php echo RutaImagenes; ?>/slide2.jpg" alt="">
-          <img src="<?php echo RutaImagenes; ?>/slide3.jpg" alt="">
-          <img src="<?php echo RutaImagenes; ?>/slide4.jpg" alt="">
+          <img src="<?php echo $first_slider_image; ?>" alt="">
+          <img src="<?php echo $second_slider_image; ?>" alt="">
+          <img src="<?php echo $third_slider_image; ?>" alt="">
+          <img src="<?php echo $four_slider_image; ?>" alt="">
           <?php endif; ?>
         </div>
         <div class="overlay-slider"></div>
@@ -69,24 +69,23 @@
                       <div class="contenido-seccion">
                             <div class="about">
                               <div class="titulo-about">
-                                    <h1>Conococenos un poco</h1>
+                                      <h1><?php echo $about_section_title; ?></h1>
                               </div>
                                   <div class="titulo-destacado">
+                                      <p><?php echo $about_section_subtitle; ?></p>
 
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                            . Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                            mollit anim id est laborum.
-                                        </p>
+                                            <?php if ( !empty($about_section_title_btn) && !empty($about_section_link_btn) ): ?>
+                                              <p class="container-btn">
+                                                  <a  href="<?php echo $about_section_link_btn; ?>" class="link-btn"><?php echo $about_section_title_btn; ?></a>
+                                              </p>
+                                            <?php endif;?>
 
 
-                                        <p class="container-btn">
-                                            <a  href="#" class="link-btn">Conocer más</a>
-                                        </p>
                                   </div>
                             </div>
 
                             <div class="about">
-                                  <img src="<?php echo RutaImagenes; ?>/slide1.jpg" alt="">
+                                  <img src="<?php echo $about_image; ?>" alt="">
                             </div>
 
                       </div>
@@ -95,7 +94,7 @@
       </section>
       <!-- End about us -->
 
-      <?php require_once('includes/options-homepage.php') ?>
+
 
        <?php if ($show_blurbs_section == true): ?>
 
@@ -125,7 +124,7 @@
 
                <article class="blurb">
                  <div class="imagen">
-                   <img src="<?php echo $first_bluerb_image;?>" alt="">
+                   <a href="<?php echo $first_bluerb_link; ?>"><img src="<?php echo $first_bluerb_image;?>" alt=""></a>
                  </div>
                  <div class="texto">
                    <h4><?php echo $first_bluerb_title; ?></h4>
@@ -135,7 +134,7 @@
 
                <article class="blurb">
                  <div class="imagen">
-                   <img src="<?php echo $second_bluerb_image;?>" alt="">
+                   <a href="<?php echo $second_bluerb_link; ?>"><img src="<?php echo $second_bluerb_image;?>" alt=""></a>
                  </div>
                  <div class="texto">
                    <h4><?php echo$second_bluerb_title; ?></h4>
@@ -145,17 +144,18 @@
 
                <article class="blurb">
                  <div class="imagen">
-                   <img src="<?php echo $third_bluerb_image;?>" alt="">
+                   <a href="<?php echo $third_bluerb_link; ?>"><img src="<?php echo $third_bluerb_image;?>" alt=""></a>
                  </div>
                  <div class="texto">
                    <h4><?php echo $third_bluerb_title; ?></h4>
                    <p><?php echo $third_bluerb_text; ?></p>
                  </div>
                </article>
-
-               <p class="container-btn">
-                   <a  href="#" class="link-btn">Conocer más</a>
-               </p>
+               <?php if (!empty($bluerb_link_btn) && !empty($bluerb_title_btn)): ?>
+                 <p class="container-btn">
+                     <a  href="<?php echo $bluerb_link_btn; ?>" class="link-btn"><?php echo $bluerb_title_btn ?></a>
+                 </p>
+               <?php endif; ?>
 
              </div>  <!-- /Contenido sección -->
            </div>

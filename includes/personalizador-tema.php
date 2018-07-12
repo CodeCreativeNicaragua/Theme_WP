@@ -44,7 +44,7 @@ function code_customize_regiser($wp_customize){
     ---------------------------------------------*/
     $wp_customize-> add_control('top_header_tex', array(
 
-      'label' => __('Texto en top header', 'slan'),
+      'label' => __('Texto en parte superior', 'slan'),
       'description' => __('Texto que se muestra en la barra superior','slan'),
       'section' => 'code_header_top',
       'settings'=>'code_settings[top_header_tex]'
@@ -166,8 +166,8 @@ function code_customize_regiser($wp_customize){
     Encabezado normal
     ****************************************/
     $wp_customize->add_section('code_header', array(
-      'title' => __('Encabezado normal', 'slan'),
-      'description' => __('Opciones del encabezado normal', 'slan'),
+      'title' => __('Opciones de logo del menú', 'slan'),
+      'description' => __('Opciones para cambiar el logo del menú', 'slan'),
       'priority' => 11,
       'panel' => 'code_header_panel'
     ));
@@ -197,104 +197,22 @@ function code_customize_regiser($wp_customize){
 
     $wp_customize-> add_control('show_page_title', array(
 
-      'label' => __('Mostrar titulo y descripcion de la web', 'slan'),
+      'label' => __('Mostrar título y descripción de la web', 'slan'),
       'section' => 'code_header',
       'settings'=>'code_settings[show_page_title]',
       'type' => 'checkbox'
     ));
 
-    /**---------------------------------------------
-    PANEL PIE DE PAGINA
-    ---------------------------------------------*/
-      $wp_customize-> add_panel('code_footer_panel', array(
 
-        'title' => __('pie de página','slan'),
-        'description' => __('Opciones del pie de página','slan'),
-        'priority' => 125
-      ));
-
-    /**---------------------------------------------
-    ENCABEZADO NORMAL
-    ---------------------------------------------*/
-    $wp_customize-> add_section('code_call_to_action', array(
-
-        'title' => __('Llamada a la accion','slan'),
-        'priority' => 10,
-        'panel'=>'code_footer_panel'
-      ));
-      // TEXTO LLAMADA A LA ACCION
-      $wp_customize-> add_setting('code_settings[call_to_action_text]', array(
-
-        'default' => '',
-        'type' => 'theme_mod'
-      ));
-
-      $wp_customize-> add_control('call_to_action_text', array(
-
-        'label' => __('Texto de llamado a la accion', 'slan'),
-        'section' => 'code_call_to_action',
-        'settings'=>'code_settings[call_to_action_text]'
-      ));
-
-
-      // TEXTO DEL BOTON LLAMADO A LA ACCION
-      $wp_customize-> add_setting('code_settings[call_to_action_text_btn_text]', array(
-
-        'default' => '',
-        'type' => 'theme_mod'
-      ));
-
-      $wp_customize-> add_control('call_to_action_text_btn_text', array(
-
-        'label' => __('Texto del boton del llamado a la accion', 'slan'),
-        'section' => 'code_call_to_action',
-        'settings'=>'code_settings[call_to_action_text_btn_text]'
-      ));
-
-      // ENLACE DEL BOTON LLAMADO A LA ACCION
-      $wp_customize-> add_setting('code_settings[call_to_action_text_btn_link]', array(
-
-        'default' => '',
-        'type' => 'theme_mod'
-      ));
-
-      $wp_customize-> add_control('call_to_action_text_btn_link', array(
-
-        'label' => __('Enlace del boton del llamado a la accion', 'slan'),
-        'section' => 'code_call_to_action',
-        'settings'=>'code_settings[call_to_action_text_btn_link]'
-      ));
-
-      /**---------------------------------------------
-      PIE DE PAGINA INFERIOR
-      ---------------------------------------------*/
-      $wp_customize-> add_section('code_botton_footer', array(
-
-          'title' => __('Pie de página inferior','slan'),
-          'priority' => 11,
-          'panel'=>'code_footer_panel'
-        ));
-        // TEXTO LLAMADA A LA ACCION
-        $wp_customize-> add_setting('code_settings[code_botton_footer_text]', array(
-
-          'default' => '',
-          'type' => 'theme_mod'
-        ));
-
-        $wp_customize-> add_control('code_botton_footer_text', array(
-
-          'label' => __('Texto de pie de página inferior', 'slan'),
-          'section' => 'code_botton_footer',
-          'settings'=>'code_settings[code_botton_footer_text]'
-        ));
-
-        /**---------------------------------------------
-        BANNER
+        /*---------------------------------------------
+        BANNER por defecto
         ---------------------------------------------*/
         $wp_customize-> add_section('code_banner', array(
 
-            'title' => __('Banner principal','slan'),
-            'priority' => 36
+            'title' => __('Imagen de encabezado','slan'),
+            'description' => 'Imagen por defecto de encabezado de todas las páginas',
+            'priority' => 36,
+            'panel'=>'code_header_panel'
 
           ));
 
@@ -307,278 +225,483 @@ function code_customize_regiser($wp_customize){
 
           $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'banner', array(
 
-            'label' => __('Subir imagen del banner principal', 'slan'),
+            'label' => __('Subir imagen de encabezado', 'slan'),
             'section' => 'code_banner',
             'settings'=>'code_settings[banner]'
 
           )));
 
-
-
           /**---------------------------------------------
           Panel opciones Home Page
           ---------------------------------------------*/
+
           $wp_customize-> add_panel('code_homepage_panel', array(
 
-              'title' => __('HomePage','slan'),
+              'title' => __('Página de inicio','slan'),
               'description' => __('Opciones de la plantilla de la página de inicio','slan'),
               'priority' => 37
 
-            ));
-            //seccion de anuncions
-            $wp_customize-> add_section('code_blurbs_section', array(
+          ));
 
-                'title' => __('Seccion de anuncios o blurbs ','slan'),
-                'priority' => 10,
-                'panel' =>'code_homepage_panel'
+            //seccion de Slider
+          $wp_customize-> add_section('code_slider_section', array(
 
-              ));
-              //checkbox para mostrar la secccion de anuncios
-            $wp_customize-> add_setting('code_settings[show_blurbs_section]', array(
+                  'title' => __('Sección de slider principal ','slan'),
+                  'priority' => 10,
+                  'panel' =>'code_homepage_panel'
+
+          ));
+
+          //Imagen 1 slider
+          $wp_customize-> add_setting('code_settings[first_slider_image]', array(
+
+                  'default' => '',
+                  'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'first_slider_image',array(
+
+                  'label' => __('Subir imagen del primer slider', 'slan'),
+                  'section' => 'code_slider_section',
+                  'settings'=>'code_settings[first_slider_image]'
+
+          )));
+
+          //Imagen 2 slider
+          $wp_customize-> add_setting('code_settings[second_slider_image]', array(
+
+                  'default' => '',
+                  'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'second_slider_image',array(
+
+                  'label' => __('Subir imagen del segundo slider', 'slan'),
+                  'section' => 'code_slider_section',
+                  'settings'=>'code_settings[second_slider_image]'
+
+          )));
+
+          //Imagen 3 slider
+          $wp_customize-> add_setting('code_settings[third_slider_image]', array(
+
+                  'default' => '',
+                  'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'third_slider_image',array(
+
+                  'label' => __('Subir imagen del tercer slider', 'slan'),
+                  'section' => 'code_slider_section',
+                  'settings'=>'code_settings[third_slider_image]'
+
+          )));
+          //Imagen 4 slider
+          $wp_customize-> add_setting('code_settings[four_slider_image]', array(
+
+                  'default' => '',
+                  'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'four_slider_image',array(
+
+                  'label' => __('Subir imagen del cuarto slider', 'slan'),
+                  'section' => 'code_slider_section',
+                  'settings'=>'code_settings[four_slider_image]'
+
+          )));
+          /******************************
+          Título de seccion de sobre la empresa
+          *******************************/
+          $wp_customize-> add_section('code_about_section', array(
+
+                  'title' => __('Sección sobre la empresa ','slan'),
+                  'priority' => 11,
+                  'panel' =>'code_homepage_panel'
+
+          ));
+
+          $wp_customize-> add_setting('code_settings[about_section_title]', array(
 
                 'default' => '',
                 'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('show_blurbs_section', array(
+          $wp_customize-> add_control('about_section_title', array(
 
-                'label' => __('Mostrar seccion de anuncios', 'slan'),
-                'section' => 'code_blurbs_section',
-                'settings'=>'code_settings[show_blurbs_section]',
-                'type' => 'checkbox'
-            ));
-            //Texto de seccion de anuncios
-            $wp_customize-> add_setting('code_settings[blurbs_section_title]', array(
+                'label' => __('Título sobre la empresa', 'slan'),
+                'section' => 'code_about_section',
+                'settings'=>'code_settings[about_section_title]'
+
+          ));
+
+            //Texo  de la  seccion sobre la empresa
+          $wp_customize-> add_setting('code_settings[about_section_subtitle]', array(
 
                 'default' => '',
                 'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('blurbs_section_title', array(
+          $wp_customize-> add_control('about_section_subtitle', array(
 
-                'label' => __('Titulos de seccion de anuncios', 'slan'),
+                'label' => __('Texto sobre la empresa', 'slan'),
+                'section' => 'code_about_section',
+                'settings'=>'code_settings[about_section_subtitle]'
+
+          ));
+
+          //Texo  del boton de la  seccion sobre la empresa
+        $wp_customize-> add_setting('code_settings[about_section_title_btn]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+        ));
+
+        $wp_customize-> add_control('about_section_title_btn', array(
+
+              'label' => __('Texto de botón', 'slan'),
+              'section' => 'code_about_section',
+              'settings'=>'code_settings[about_section_title_btn]'
+
+        ));
+
+        //Enlace del boton
+      $wp_customize-> add_setting('code_settings[about_section_link_btn]', array(
+
+            'default' => '',
+            'type' => 'theme_mod'
+      ));
+
+      $wp_customize-> add_control('about_section_link_btn', array(
+
+            'label' => __('Enlace del botón', 'slan'),
+            'section' => 'code_about_section',
+            'settings'=>'code_settings[about_section_link_btn]'
+
+      ));
+      //Imagen about
+      $wp_customize-> add_setting('code_settings[about_image]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+      ));
+
+      $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'about_image',array(
+
+              'label' => __('Subir imagen', 'slan'),
+              'section' => 'code_about_section',
+              'settings'=>'code_settings[about_image]'
+
+      )));
+
+
+          /******************************
+          Título de seccion de anuncios
+          *******************************/
+          $wp_customize-> add_section('code_blurbs_section', array(
+
+                  'title' => __('Sección de anuncios o servicios ','slan'),
+                  'priority' => 12,
+                  'panel' =>'code_homepage_panel'
+
+          ));
+
+          $wp_customize-> add_setting('code_settings[blurbs_section_title]', array(
+
+                'default' => '',
+                'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('blurbs_section_title', array(
+
+                'label' => __('Título de sección de anuncios o servicios', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[blurbs_section_title]'
 
-            ));
+          ));
 
-            //subtitulo  de la  seccion de anuncios
-            $wp_customize-> add_setting('code_settings[blurbs_section_subtitle]', array(
+            //subtitulo  de la  seccion de anuncios o servicios
+          $wp_customize-> add_setting('code_settings[blurbs_section_subtitle]', array(
 
                 'default' => '',
                 'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('blurbs_section_subtitle', array(
+          $wp_customize-> add_control('blurbs_section_subtitle', array(
 
-                'label' => __('Sub-Titulo de seccion de anuncios', 'slan'),
+                'label' => __('Subtitulo de sección de anuncios o servicios', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[blurbs_section_subtitle]'
 
-            ));
+          ));
 
             //Imagen primer anuncio
-            $wp_customize-> add_setting('code_settings[first_bluerb_image]', array(
+          $wp_customize-> add_setting('code_settings[first_bluerb_image]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'first_bluerb_image',array(
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'first_bluerb_image',array(
 
-              'label' => __('Subir foto del primer anuncio', 'slan'),
+              'label' => __('Subir imagen del primer anuncios o servicios', 'slan'),
               'section' => 'code_blurbs_section',
               'settings'=>'code_settings[first_bluerb_image]'
 
-            )));
+          )));
 
-            //Titulo del  primer anuncio
-            $wp_customize-> add_setting('code_settings[first_bluerb_title]', array(
+          //enlace del  priner  anuncio
+          $wp_customize-> add_setting('code_settings[first_bluerb_link]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('first_bluerb_title', array(
+          $wp_customize-> add_control('first_bluerb_link', array(
 
-                'label' => __('Titulo del primer anuncios', 'slan'),
+                'label' => __('Enlace de la imagen del primer anuncio o servicio', 'slan'),
+                'section' => 'code_blurbs_section',
+                'settings'=>'code_settings[first_bluerb_link]'
+
+          ));
+
+          //Título  del  primer anuncio
+          $wp_customize-> add_setting('code_settings[first_bluerb_title]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('first_bluerb_title', array(
+
+                'label' => __('Título  del primer anuncio o servicio', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[first_bluerb_title]'
 
-            ));
+          ));
 
-            //Texto del  primer anuncio
-            $wp_customize-> add_setting('code_settings[first_bluerb_text]', array(
+          //Texto del  primer anuncio
+          $wp_customize-> add_setting('code_settings[first_bluerb_text]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('first_bluerb_text', array(
+          $wp_customize-> add_control('first_bluerb_text', array(
 
-                'label' => __('Texto del primer anuncios', 'slan'),
+                'label' => __('Texto del primer anuncio o servicio', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[first_bluerb_text]'
 
-            ));
+          ));
 
-            //segundo anuncio
+            //Segundo anuncio
 
-            $wp_customize-> add_setting('code_settings[second_bluerb_image]', array(
+            //Imagen
+          $wp_customize-> add_setting('code_settings[second_bluerb_image]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
-            $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'second_bluerb_image',array(
+          ));
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'second_bluerb_image',array(
 
-              'label' => __('Subir foto segundo anuncio', 'slan'),
+              'label' => __('Subir imagen segundo anuncio o servicio', 'slan'),
               'section' => 'code_blurbs_section',
               'settings'=>'code_settings[second_bluerb_image]'
 
-            )));
-
-            //Titulo del  primer anuncio
-            $wp_customize-> add_setting('code_settings[second_bluerb_title]', array(
+          )));
+          //enlace del  segundo  anuncio
+          $wp_customize-> add_setting('code_settings[second_bluerb_link]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('second_bluerb_title', array(
+          $wp_customize-> add_control('second_bluerb_link', array(
 
-                'label' => __('Titulo del segundo anuncios', 'slan'),
+                'label' => __('Enlace de la imagen del segundo anuncio o servicio', 'slan'),
+                'section' => 'code_blurbs_section',
+                'settings'=>'code_settings[second_bluerb_link]'
+
+          ));
+
+            //Título  del  segundo anuncio
+          $wp_customize-> add_setting('code_settings[second_bluerb_title]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('second_bluerb_title', array(
+
+                'label' => __('Título  del segundo anuncio o servicio', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[second_bluerb_title]'
 
-            ));
+          ));
 
-            //Texto del  primer anuncio
-            $wp_customize-> add_setting('code_settings[second_bluerb_text]', array(
+          //Texto del  segundo anuncio
+          $wp_customize-> add_setting('code_settings[second_bluerb_text]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('second_bluerb_text', array(
+          $wp_customize-> add_control('second_bluerb_text', array(
 
-                'label' => __('Texto del segundo anuncio', 'slan'),
+                'label' => __('Texto del segundo anuncio o servicio', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[second_bluerb_text]'
 
-            ));
+          ));
 
 
-            //tercer anuncio
+          //Foto de tercer anuncio
 
-            $wp_customize-> add_setting('code_settings[third_bluerb_image]', array(
+          $wp_customize-> add_setting('code_settings[third_bluerb_image]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
-            $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'third_bluerb_image',array(
+          ));
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'third_bluerb_image',array(
 
-              'label' => __('Subir foto del tercer anuncio', 'slan'),
+              'label' => __('Subir imagen del tercer anuncio o servicio', 'slan'),
               'section' => 'code_blurbs_section',
               'settings'=>'code_settings[third_bluerb_image]'
 
-            )));
+          )));
 
-            //Titulo del  primer anuncio
-            $wp_customize-> add_setting('code_settings[third_bluerb_title]', array(
+          //enlace del  tercer  anuncio
+          $wp_customize-> add_setting('code_settings[third_bluerb_link]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('third_bluerb_title', array(
+          $wp_customize-> add_control('third_bluerb_link', array(
 
-                'label' => __('Titulo del tercer anuncios', 'slan'),
+                'label' => __('Enlace de la imagen del tercer anuncio o servicio', 'slan'),
+                'section' => 'code_blurbs_section',
+                'settings'=>'code_settings[third_bluerb_link]'
+
+          ));
+
+          //Título  del  tercer anuncio
+          $wp_customize-> add_setting('code_settings[third_bluerb_title]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('third_bluerb_title', array(
+
+                'label' => __('Título  del tercer anuncio o servicio', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[third_bluerb_title]'
 
-            ));
+          ));
 
-            //Texto del  primer anuncio
-            $wp_customize-> add_setting('code_settings[third_bluerb_text]', array(
+          //Texto del  tercer  anuncio
+          $wp_customize-> add_setting('code_settings[third_bluerb_text]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('third_bluerb_text', array(
+          $wp_customize-> add_control('third_bluerb_text', array(
 
-                'label' => __('Texto del tercer anuncio', 'slan'),
+                'label' => __('Texto del tercer anuncio o servicio', 'slan'),
                 'section' => 'code_blurbs_section',
                 'settings'=>'code_settings[third_bluerb_text]'
 
-            ));
+          ));
 
-            //seccion de articulos mas recientes
-            $wp_customize-> add_section('code_last_post_section', array(
+          //Enlace del boton de todos los servicios
+        $wp_customize-> add_setting('code_settings[bluerb_link_btn]', array(
 
-                'title' => __('Seccion de ultimos articulos','slan'),
-                'priority' => 11,
+              'default' => '',
+              'type' => 'theme_mod'
+        ));
+
+        $wp_customize-> add_control('bluerb_link_btn', array(
+
+              'label' => __('Enlace del botón', 'slan'),
+              'section' => 'code_blurbs_section',
+              'settings'=>'code_settings[bluerb_link_btn]'
+
+        ));
+          //titulo del boton de todos los servicios
+        $wp_customize-> add_setting('code_settings[bluerb_title_btn]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+        ));
+
+        $wp_customize-> add_control('bluerb_title_btn', array(
+
+              'label' => __('Texto del botón', 'slan'),
+              'section' => 'code_blurbs_section',
+              'settings'=>'code_settings[bluerb_title_btn]'
+
+        ));
+
+          //seccion de articulos mas recientes
+          $wp_customize-> add_section('code_last_post_section', array(
+
+                'title' => __('Sección de últimos artículos del blog','slan'),
+                'priority' => 13,
                 'panel' =>'code_homepage_panel'
 
-              ));
-              //checkbox para mostrar la secccion de anuncios
-            $wp_customize-> add_setting('code_settings[show_last_post_section]', array(
+          ));
+
+          //checkbox para mostrar la secccion de anuncios
+          $wp_customize-> add_setting('code_settings[show_last_post_section]', array(
 
                 'default' => '',
                 'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('show_last_post_section', array(
+          $wp_customize-> add_control('show_last_post_section', array(
 
-                'label' => __('Mostrar seccion de ultimos articulos', 'slan'),
+                'label' => __('Mostrar sección de últimos artículos del blog', 'slan'),
                 'section' => 'code_last_post_section',
                 'settings'=>'code_settings[show_last_post_section]',
                 'type' => 'checkbox'
-            ));
+          ));
 
 
-            // Agregando personilazador del titutlo de las ultimas entradas
+          // *****************************
+          //   SECCION DE BLOG
+          //******************************
 
-
-            $wp_customize-> add_setting('code_settings[last_post_section_tittle]', array(
+          $wp_customize-> add_setting('code_settings[last_post_section_tittle]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('last_post_section_tittle', array(
+          $wp_customize-> add_control('last_post_section_tittle', array(
 
-                'label' => __('Titulo de seccion de ultimos articulos', 'slan'),
+                'label' => __('Título de sección', 'slan'),
                 'section' => 'code_last_post_section',
                 'settings'=>'code_settings[last_post_section_tittle]'
 
-            ));
+          ));
 
-            //Texto del  primer anuncio
-            $wp_customize-> add_setting('code_settings[last_post_section_subtittle]', array(
+          //Subtitulo de sección de últimos artículos del blog
+          $wp_customize-> add_setting('code_settings[last_post_section_subtittle]', array(
 
               'default' => '',
               'type' => 'theme_mod'
-            ));
+          ));
 
-            $wp_customize-> add_control('last_post_section_subtittle', array(
+          $wp_customize-> add_control('last_post_section_subtittle', array(
 
-                'label' => __('Sub-Titulo de seccion de ultimos articulos', 'slan'),
+                'label' => __('Subtitulo  de sección', 'slan'),
                 'section' => 'code_last_post_section',
                 'settings'=>'code_settings[last_post_section_subtittle]'
 
-            ));
-
-
-
-
-
-
-
-
-
-
-
+          ));
 }
 
 add_action('customize_register','code_customize_regiser');
