@@ -77,7 +77,7 @@
 
                                             <?php if ( !empty($about_section_title_btn) && !empty($about_section_link_btn) ): ?>
                                               <p class="container-btn">
-                                                  <a  href="<?php echo $about_section_link_btn; ?>" class="link-btn"><?php echo $about_section_title_btn; ?></a>
+                                                  <a  href="<?php echo esc_url($about_section_link_btn); ?>" class="link-btn"><?php echo $about_section_title_btn; ?></a>
                                               </p>
                                             <?php endif;?>
 
@@ -125,7 +125,7 @@
 
                <article class="blurb">
                  <div class="imagen">
-                   <a href="<?php echo $first_bluerb_link; ?>"><img src="<?php echo $first_bluerb_image;?>" alt=""></a>
+                   <a href="<?php echo esc_url($first_bluerb_link); ?>"><img src="<?php echo $first_bluerb_image;?>" alt=""></a>
                  </div>
                  <div class="texto">
                    <h4><?php echo $first_bluerb_title; ?></h4>
@@ -135,7 +135,7 @@
 
                <article class="blurb">
                  <div class="imagen">
-                   <a href="<?php echo $second_bluerb_link; ?>"><img src="<?php echo $second_bluerb_image;?>" alt=""></a>
+                   <a href="<?php echo esc_url($second_bluerb_link); ?>"><img src="<?php echo $second_bluerb_image;?>" alt=""></a>
                  </div>
                  <div class="texto">
                    <h4><?php echo$second_bluerb_title; ?></h4>
@@ -145,7 +145,7 @@
 
                <article class="blurb">
                  <div class="imagen">
-                   <a href="<?php echo $third_bluerb_link; ?>"><img src="<?php echo $third_bluerb_image;?>" alt=""></a>
+                   <a href="<?php echo esc_url($third_bluerb_link); ?>"><img src="<?php echo $third_bluerb_image;?>" alt=""></a>
                  </div>
                  <div class="texto">
                    <h4><?php echo $third_bluerb_title; ?></h4>
@@ -154,7 +154,7 @@
                </article>
                <?php if (!empty($bluerb_link_btn) && !empty($bluerb_title_btn)): ?>
                  <p class="container-btn">
-                     <a  href="<?php echo $bluerb_link_btn; ?>" class="link-btn"><?php echo $bluerb_title_btn ?></a>
+                     <a  href="<?php echo esc_url($bluerb_link_btn); ?>" class="link-btn"><?php echo $bluerb_title_btn ?></a>
                  </p>
                <?php endif; ?>
 
@@ -162,6 +162,19 @@
            </div>
          </section> <!-- /Blurbs -->
        <?php endif; ?>
+
+       <!-- Primer LLamado a la accion -->
+       <section class="llamada-accion">
+                <div class="contenedor">
+                      <div class="texto">
+                            <p><?php echo $call_to_action_section_texto_1; ?></p>
+                      </div>
+
+                      <div class="boton">
+                            <a href="<?php echo esc_url($call_to_action_section_link_btn_1); ?>"><?php echo $call_to_action_section_text_btn_1 ?></a>
+                      </div>
+                </div>
+       </section>
 
        <?php if ( $show_porfolio_section == true ): ?>
 
@@ -180,7 +193,7 @@
                                   <span><?php echo $porfolio_work_1_categoria;?></span>
                                   <h1><?php echo $porfolio_work_1_nombre;?></h1>
                                   <div class="porfolio-link">
-                                        <a href="<?php echo $porfolio_work_1_link;?></h1>"><i class="fa fa-external-link"></i></a>
+                                        <a href="<?php echo esc_url($porfolio_work_1_link);?></h1>"><i class="fa fa-external-link"></i></a>
                                         <a href="#"><i class="fa fa-search"></i></a>
                                   </div>
                               </div>
@@ -193,7 +206,7 @@
                                   <span><?php echo $porfolio_work_2_categoria;?></span>
                                   <h1><?php echo $porfolio_work_2_nombre;?></h1>
                                   <div class="porfolio-link">
-                                        <a href="<?php echo $porfolio_work_2_link;?></h1>"><i class="fa fa-external-link"></i></a>
+                                        <a href="<?php echo esc_url($porfolio_work_2_link);?>"><i class="fa fa-external-link"></i></a>
                                         <a href="#"><i class="fa fa-search"></i></a>
                                   </div>
                               </div>
@@ -206,48 +219,23 @@
                                   <span><?php echo $porfolio_work_3_categoria;?></span>
                                   <h1><?php echo $porfolio_work_3_nombre;?></h1>
                                   <div class="porfolio-link">
-                                        <a href="<?php echo $porfolio_work_3_link;?></h1>"><i class="fa fa-external-link"></i></a>
+                                        <a href="<?php echo esc_url($porfolio_work_3_link);?></h1>"><i class="fa fa-external-link"></i></a>
                                         <a href="#"><i class="fa fa-search"></i></a>
                                   </div>
                               </div>
                             </div>
 
                             <p class="container-btn">
-                                <a  href="<?php echo $porfolio_btn_link; ?>" class="link-btn"><?php echo $porfolio_btn_text; ?></a>
+                                <a  href="<?php echo esc_url($porfolio_btn_link); ?>" class="link-btn"><?php echo $porfolio_btn_text; ?></a>
                             </p>
                       </div>
                 </div>
        </section>
        <?php endif; ?>
 
-       <section class="llamada-accion">
-                <div class="contenedor">
-                      <div class="texto">
-                            <p>Texto de llamado a la acción</p>
-                      </div>
+       <?php if($show_post_section == true): ?>
 
-                      <div class="boton">
-                            <a href="#">Contactar</a>
-                      </div>
-                </div>
-       </section>
-
-       <section class="sections">
-                <div class="contenedor">
-                      <div class="titulo-seccions">
-                            <h1>Testimonios de nuestros clientes</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                      </div>
-
-                      <div class="contenido-sections">
-
-                      </div>
-                      </div>
-                </div>
-       </section>
-
-       <?php if ($show_last_post_section == true): ?>
-         <section class="ultimos-articulos">
+         <section class="ultimos-articulos bg-white">
            <div class="contenedor">
              <?php if (isset( $last_post_section_tittle) || isset($last_post_section_subtittle) ): ?>
                <div class="titulo-seccions">
@@ -307,45 +295,20 @@
          </section> <!-- /.ultimos-articulos -->
        <?php endif; ?>
 
-       </section>
-
-       <?php
-           $options = get_theme_mod('code_settings');
-
-           if (!empty($options['call_to_action_text'])) {
-             $call_to_action_text = $options['call_to_action_text'];
-           }
-
-           if (!empty($options['call_to_action_text_btn_text'])) {
-             $call_to_action_text_btn_text = $options['call_to_action_text_btn_text'];
-           }
-
-           if (!empty($options['call_to_action_text_btn_link'])) {
-             $call_to_action_text_btn_link = $options['call_to_action_text_btn_link'];
-           }
-
-           if (!empty($options['code_botton_footer_text'])) {
-             $code_botton_footer_text = $options['code_botton_footer_text'];
-           }
-        ?>
-
-             <section class="llamada-accion">
+      <section class="llamada-accion">
                <div class="contenedor">
-                 <?php if (isset($call_to_action_text)): ?>
-                     <div class="texto">
-                         <p><?php echo $call_to_action_text; ?></p>
-                     </div>
-                 <?php endif; ?>
 
-                 <?php if (isset($call_to_action_text_btn_link)): ?>
-                     <div class="boton">
-                         <a href="<?php echo esc_url($call_to_action_text_btn_link); ?>"><?php echo $call_to_action_text_btn_text; ?></a>
+                     <div class="texto">
+                         <p><?php echo $call_to_action_section_texto_2; ?></p>
                      </div>
-                 <?php endif; ?>
+                     <div class="boton">
+                         <a href="<?php echo esc_url($call_to_action_section_link_btn_2); ?>"><?php echo $call_to_action_section_text_btn_2; ?></a>
+                     </div>
+
 
                </div>
 
-             </section> <!-- /.llamada-accion 2 -->
+      </section> <!-- /.llamada-accion 2 -->
 
 
 

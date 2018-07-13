@@ -956,24 +956,24 @@ function code_customize_regiser($wp_customize){
           //-----------------------------------
           $wp_customize-> add_section('code_last_post_section', array(
 
-                'title' => __('Sección de últimos artículos del blog','slan'),
+                'title' => __('Sección del blog','slan'),
                 'priority' => 15,
                 'panel' =>'code_homepage_panel'
 
           ));
 
           //checkbox para mostrar la secccion de blog
-          $wp_customize-> add_setting('code_settings[show_last_post_section]', array(
+          $wp_customize-> add_setting('code_settings[show_post_section]', array(
 
                 'default' => '',
                 'type' => 'theme_mod'
           ));
 
-          $wp_customize-> add_control('show_last_post_section', array(
+          $wp_customize-> add_control('show_post_section', array(
 
-                'label' => __('Mostrar sección de últimos artículos del blog', 'slan'),
+                'label' => __('Mostrar sección de blog', 'slan'),
                 'section' => 'code_last_post_section',
-                'settings'=>'code_settings[show_last_post_section]',
+                'settings'=>'code_settings[show_post_section]',
                 'type' => 'checkbox'
           ));
 
@@ -1010,6 +1010,107 @@ function code_customize_regiser($wp_customize){
                 'settings'=>'code_settings[last_post_section_subtittle]'
 
           ));
+
+          // *****************************
+          //   SECCION DE CALLS TO ACTION
+          //******************************
+          $wp_customize-> add_section('call_to_action_section', array(
+
+                'title' => __('Sección de llamadas a la acción','slan'),
+                'priority' => 16,
+                'panel' =>'code_homepage_panel'
+
+          ));
+          // Primer Texto
+          $wp_customize-> add_setting('code_settings[call_to_action_section_texto_1]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('call_to_action_section_texto_1', array(
+
+                'label' => __('Texto del primer llamada a la acción', 'slan'),
+                'section' => 'call_to_action_section',
+                'settings'=>'code_settings[call_to_action_section_texto_1]'
+
+          ));
+
+          // Primer texto de boton
+          $wp_customize-> add_setting('code_settings[call_to_action_section_text_btn_1]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('call_to_action_section_text_btn_1', array(
+
+                'label' => __('Texto del primer botón', 'slan'),
+                'section' => 'call_to_action_section',
+                'settings'=>'code_settings[call_to_action_section_text_btn_1]'
+
+          ));
+
+          // Primer link boton
+          $wp_customize-> add_setting('code_settings[call_to_action_section_link_btn_1]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('call_to_action_section_link_btn_1', array(
+
+                'label' => __('Enlace del primer botón', 'slan'),
+                'section' => 'call_to_action_section',
+                'settings'=>'code_settings[call_to_action_section_link_btn_1]'
+
+          ));
+
+          // Segundo Texto
+          $wp_customize-> add_setting('code_settings[call_to_action_section_texto_2]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('call_to_action_section_texto_2', array(
+
+                'label' => __('Texto del segundo llamada a la acción', 'slan'),
+                'section' => 'call_to_action_section',
+                'settings'=>'code_settings[call_to_action_section_texto_2]'
+
+          ));
+
+          // segundo texto de  boton
+          $wp_customize-> add_setting('code_settings[call_to_action_section_text_btn_2]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('call_to_action_section_text_btn_2', array(
+
+                'label' => __('Texto del Segundo botón', 'slan'),
+                'section' => 'call_to_action_section',
+                'settings'=>'code_settings[call_to_action_section_text_btn_2]'
+
+          ));
+          // segundo link boton
+          $wp_customize-> add_setting('code_settings[call_to_action_section_link_btn_2]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('call_to_action_section_link_btn_2', array(
+
+                'label' => __('Enlace del segundo botón', 'slan'),
+                'section' => 'call_to_action_section',
+                'settings'=>'code_settings[call_to_action_section_link_btn_2]'
+
+          ));
+
+
 }
 
 add_action('customize_register','code_customize_regiser');

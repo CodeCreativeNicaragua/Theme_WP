@@ -304,10 +304,10 @@ Seccion de ultimos articulos
 ******************************************/
 
 //Mostrar u ocultar seccion
-if (!empty($options['show_last_post_section'])) {
-  $show_last_post_section = $options['show_last_post_section'];
+if (isset($options['show_post_section'])) {
+  $show_post_section = $options['show_post_section'];
 }else {
-  $show_last_post_section = true;
+  $show_post_section = true;
 }
 
 if (!empty($options['last_post_section_tittle'])) {
@@ -318,4 +318,44 @@ if (!empty($options['last_post_section_subtittle'])) {
   $last_post_section_subtittle = $options['last_post_section_subtittle'];
 }
 
+/******************************************
+Seccion de calls to action
+******************************************/
+// Primer llamado a la accion
+if (!empty($options['call_to_action_section_texto_1'])) {
+  $call_to_action_section_texto_1 = $options['call_to_action_section_texto_1'];
+}else {
+  $call_to_action_section_texto_1 = 'Texto de llamado a la acción 1';
+}
+
+if (!empty($options['call_to_action_section_text_btn_1'])) {
+  $call_to_action_section_text_btn_1 = $options['call_to_action_section_text_btn_1'];
+}else {
+  $call_to_action_section_text_btn_1 = 'Contactar';
+}
+
+if (!empty($options['call_to_action_section_link_btn_1'])) {
+  $call_to_action_section_link_btn_1 = $options['call_to_action_section_link_btn_1'];
+}else {
+  $call_to_action_section_link_btn_1 = 'https://codecreativenicaragua.com';
+}
+
+// Segundo llamado a la accion
+if (!empty($options['call_to_action_section_texto_2'])) {
+  $call_to_action_section_texto_2 = $options['call_to_action_section_texto_2'];
+}else {
+  $call_to_action_section_texto_2 = 'Texto de llamado a la acción 2';
+}
+
+if (!empty($options['call_to_action_section_text_btn_2'])) {
+  $call_to_action_section_text_btn_2 = $options['call_to_action_section_text_btn_2'];
+}else {
+  $call_to_action_section_text_btn_2 = 'Contactar';
+}
+
+if (!empty($options['call_to_action_section_link_btn_2'])) {
+  $call_to_action_section_link_btn_2 = $options['call_to_action_section_link_btn_2'];
+}else {
+  $call_to_action_section_link_btn_2 = 'https://codecreativenicaragua.com';
+}
  ?>
