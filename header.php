@@ -43,7 +43,12 @@ archivos con el encabezado del tema
   <body <?php body_class();?>>
 
       <?php $options = get_theme_mod('code_settings');
-
+        //ocultar section top header
+        if (isset($options['show_header_superior_section'])) {
+          $show_header_superior_section = $options['show_header_superior_section'];
+        }else {
+          $show_header_superior_section = false;
+        }
         //Enlace Texto en top header
         if ( !empty($options['top_header_tex'] ) ) {
 
@@ -124,6 +129,7 @@ archivos con el encabezado del tema
     <!-- Header -->
     <header >
 
+      <?php if ($show_header_superior_section == true): ?>
 
       <div class="top-header ">
 
@@ -188,7 +194,9 @@ archivos con el encabezado del tema
         </div>
 
       </div> <!-- /Top header -->
-      
+
+            <?php endif; ?>
+
       <div class="menu-bar">
         <a href="<?php echo home_url(); ?>" class="logo-container">
           <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>">

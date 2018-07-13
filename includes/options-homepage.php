@@ -1,7 +1,8 @@
 <?php
 $options = get_theme_mod('code_settings');
+
 /******************************************
-Slider
+SLIDER
 ******************************************/
 //slider 1
 if (!empty ($options['first_slider_image']) ) {
@@ -22,6 +23,12 @@ if (!empty ($options['four_slider_image']) ) {
 /******************************************
 About Us
 ******************************************/
+//Mostrar u ocultar seccion
+if (isset($options['show_about_section'])) {
+  $show_about_section = $options['show_about_section'];
+}else {
+  $show_about_section = true;
+}
 //Titulo
 if (!empty ($options['about_section_title']) ) {
   $about_section_title = $options['about_section_title'];
@@ -60,7 +67,7 @@ Seccion de anuncions o blurbs
 if (isset($options['show_blurbs_section'])) {
   $show_blurbs_section = $options['show_blurbs_section'];
 }else {
-  $show_blurbs_section = false;
+  $show_blurbs_section = true;
 }
 //Titulo seccion de anuncios o blurbs
 if (!empty ($options['blurbs_section_title']) ) {
@@ -158,16 +165,149 @@ if (!empty ($options['bluerb_title_btn']) ) {
   $bluerb_title_btn = __('Conocer más','slan');
 }
 
+/******************************************
+Seccion de PORFOLIO
+******************************************/
+//Mostrar u ocultar seccion
+if (isset($options['show_porfolio_section'])) {
+  $show_porfolio_section = $options['show_porfolio_section'];
+}else {
+  $show_porfolio_section = true;
+}
+//TRABAJO 1
+//Titulo
+if (!empty($options['porfolio_section_tittle'])) {
+  $porfolio_section_tittle = $options['porfolio_section_tittle'];
+}else {
+  $porfolio_section_tittle = 'Nuestros trabajos';
+}
 
+//Subtitulo
+if (!empty($options['porfolio_section_subtittle'])) {
+  $porfolio_section_subtittle = $options['porfolio_section_subtittle'];
+}else {
+  $porfolio_section_subtittle = 'Realizamos los mejores trabajos para hacer crecer su empresa';
+}
+
+//Primer trabajo - Imagen
+if (!empty($options['porfolio_work_1'])) {
+  $porfolio_work_1 = $options['porfolio_work_1'];
+}else {
+  $porfolio_work_1 = RutaImagenes . '/work-1.jpg';
+}
+
+// Categoria
+
+if (!empty($options['porfolio_work_1_categoria'])) {
+  $porfolio_work_1_categoria = $options['porfolio_work_1_categoria'];
+}else {
+  $porfolio_work_1_categoria = 'PROYECTO 1';
+}
+
+// Nombre
+
+if (!empty($options['porfolio_work_1_nombre'])) {
+  $porfolio_work_1_nombre = $options['porfolio_work_1_nombre'];
+}else {
+  $porfolio_work_1_nombre = 'Proyecto a CodeCreative';
+}
+
+// Enlace
+
+if (!empty($options['porfolio_work_1_link'])) {
+  $porfolio_work_1_link = $options['porfolio_work_1_link'];
+}else {
+  $porfolio_work_1_link = 'http://codecreativenicaragua.com';
+}
+//TRABAJO 2
+
+
+//Primer trabajo - Imagen
+if (!empty($options['porfolio_work_2'])) {
+  $porfolio_work_2= $options['porfolio_work_2'];
+}else {
+  $porfolio_work_2 = RutaImagenes . '/work-2.jpg';
+}
+
+// Categoria
+
+if (!empty($options['porfolio_work_2_categoria'])) {
+  $porfolio_work_2_categoria = $options['porfolio_work_2_categoria'];
+}else {
+  $porfolio_work_2_categoria = 'PROYECTO 2';
+}
+
+// Nombre
+
+if (!empty($options['porfolio_work_2_nombre'])) {
+  $porfolio_work_2_nombre = $options['porfolio_work_2_nombre'];
+}else {
+  $porfolio_work_2_nombre = 'Proyecto a CodeCreative';
+}
+
+// Enlace
+
+if (!empty($options['porfolio_work_2_link'])) {
+  $porfolio_work_2_link = $options['porfolio_work_2_link'];
+}else {
+  $porfolio_work_2_link = 'http://codecreativenicaragua.com';
+}
+
+//TRABAJO 3
+
+
+//Tercer trabajo - Imagen
+if (!empty($options['porfolio_work_3'])) {
+  $porfolio_work_3= $options['porfolio_work_3'];
+}else {
+  $porfolio_work_3 = RutaImagenes . '/work-3.jpg';
+}
+
+// Categoria
+
+if (!empty($options['porfolio_work_3_categoria'])) {
+  $porfolio_work_3_categoria = $options['porfolio_work_3_categoria'];
+}else {
+  $porfolio_work_3_categoria = 'PROYECTO 3';
+}
+
+// Nombre
+
+if (!empty($options['porfolio_work_3_nombre'])) {
+  $porfolio_work_3_nombre = $options['porfolio_work_3_nombre'];
+}else {
+  $porfolio_work_3_nombre = 'Proyecto a CodeCreative';
+}
+
+// Enlace
+
+if (!empty($options['porfolio_work_3_link'])) {
+  $porfolio_work_3_link = $options['porfolio_work_3_link'];
+}else {
+  $porfolio_work_3_link = 'http://codecreativenicaragua.com';
+}
+
+//Boton de la seccion
+
+if (!empty ($options['porfolio_btn_text']) ) {
+  $porfolio_btn_text = $options['porfolio_btn_text'];
+}else {
+  $porfolio_btn_text = __('Conocer más','slan');
+}
+if (!empty ($options['porfolio_btn_link']) ) {
+  $porfolio_btn_link = $options['porfolio_btn_link'];
+}else {
+  $porfolio_btn_link = 'http://codecreativenicaragua.com';
+}
 /******************************************
 Seccion de ultimos articulos
 ******************************************/
 
 //Mostrar u ocultar seccion
-if (isset($options['show_last_post_section'])) {
+if (!empty($options['show_last_post_section'])) {
   $show_last_post_section = $options['show_last_post_section'];
 }else {
-  $show_last_post_section = false;
+  $show_last_post_section = true;
 }
 
 if (!empty($options['last_post_section_tittle'])) {

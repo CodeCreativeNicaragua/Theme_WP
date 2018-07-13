@@ -23,6 +23,21 @@ function code_customize_regiser($wp_customize){
     /**---------------------------------------------
     ENCABEZADO SUPERIOR
     ---------------------------------------------*/
+    //checkbox para mostrar la secccion
+    $wp_customize-> add_setting('code_settings[show_header_superior_section]', array(
+
+          'default' => '',
+          'type' => 'theme_mod'
+    ));
+
+    $wp_customize-> add_control('show_header_superior_section', array(
+
+          'label' => __('Mostrar esta sección ', 'slan'),
+          'section' => 'code_header_top',
+          'settings'=>'code_settings[show_header_superior_section]',
+          'type' => 'checkbox'
+    ));
+    //seccion en cabezado superior
     $wp_customize-> add_section('code_header_top', array(
 
       'title' => __('Encabezado superior','slan'),
@@ -313,6 +328,22 @@ function code_customize_regiser($wp_customize){
           /******************************
           Título de seccion de sobre la empresa
           *******************************/
+
+          //checkbox para mostrar la secccion
+          $wp_customize-> add_setting('code_settings[show_about_section]', array(
+
+                'default' => '',
+                'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('show_about_section', array(
+
+                'label' => __('Mostrar esta sección ', 'slan'),
+                'section' => 'code_about_section',
+                'settings'=>'code_settings[show_about_section]',
+                'type' => 'checkbox'
+          ));
+          //seccion about
           $wp_customize-> add_section('code_about_section', array(
 
                   'title' => __('Sección sobre la empresa ','slan'),
@@ -396,8 +427,23 @@ function code_customize_regiser($wp_customize){
 
 
           /******************************
-          Título de seccion de anuncios
+          Seccion de anuncios
           *******************************/
+          //checkbox para mostrar la secccion
+          $wp_customize-> add_setting('code_settings[show_blurbs_section]', array(
+
+                'default' => '',
+                'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('show_blurbs_section', array(
+
+                'label' => __('Mostrar esta sección ', 'slan'),
+                'section' => 'code_blurbs_section',
+                'settings'=>'code_settings[show_blurbs_section]',
+                'type' => 'checkbox'
+          ));
+          //Seccion de anuncios
           $wp_customize-> add_section('code_blurbs_section', array(
 
                   'title' => __('Sección de anuncios o servicios ','slan'),
@@ -644,17 +690,279 @@ function code_customize_regiser($wp_customize){
               'settings'=>'code_settings[bluerb_title_btn]'
 
         ));
+          //-----------------------------------
+          //SECCION PORFOLIO
+          //-----------------------------------
+          $wp_customize-> add_section('code_porfolio_section', array(
 
-          //seccion de articulos mas recientes
-          $wp_customize-> add_section('code_last_post_section', array(
-
-                'title' => __('Sección de últimos artículos del blog','slan'),
+                'title' => __('Sección de trabajos realizados','slan'),
                 'priority' => 13,
                 'panel' =>'code_homepage_panel'
 
           ));
 
-          //checkbox para mostrar la secccion de anuncios
+          //checkbox para mostrar la secccion
+          $wp_customize-> add_setting('code_settings[show_porfolio_section]', array(
+
+                'default' => '',
+                'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('show_porfolio_section', array(
+
+                'label' => __('Mostrar esta sección', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[show_porfolio_section]',
+                'type' => 'checkbox'
+          ));
+          //titulo de la seccion
+          $wp_customize-> add_setting('code_settings[porfolio_section_tittle]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_section_tittle', array(
+
+                'label' => __('Título de sección', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_section_tittle]'
+
+          ));
+
+          //Subtitulo de la seccion
+          $wp_customize-> add_setting('code_settings[porfolio_section_subtittle]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_section_subtittle', array(
+
+                'label' => __('Título de sección', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_section_subtittle]'
+
+          ));
+          //Primer trabajo - Imagen
+          $wp_customize-> add_setting('code_settings[porfolio_work_1]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'porfolio_work_1',array(
+
+              'label' => __('Subir imagen del primer proyecto', 'slan'),
+              'section' => 'code_porfolio_section',
+              'settings'=>'code_settings[porfolio_work_1]'
+
+          )));
+
+          // Categoria
+          $wp_customize-> add_setting('code_settings[porfolio_work_1_categoria]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_1_categoria', array(
+
+                'label' => __('Categoria del primer proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_1_categoria]'
+
+          ));
+          // Nombre del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_work_1_nombre]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_1_nombre', array(
+
+                'label' => __('Nombre del primer proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_1_nombre]'
+
+          ));
+
+          // Link del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_work_1_link]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_1_link', array(
+
+                'label' => __('Enlace del primer proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_1_link]'
+
+          ));
+
+          //segundo trabajo - Imagen
+          $wp_customize-> add_setting('code_settings[porfolio_work_2]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'porfolio_work_2',array(
+
+              'label' => __('Subir imagen del segundo proyecto', 'slan'),
+              'section' => 'code_porfolio_section',
+              'settings'=>'code_settings[porfolio_work_2]'
+
+          )));
+
+          // Categoria
+          $wp_customize-> add_setting('code_settings[porfolio_work_2_categoria]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_2_categoria', array(
+
+                'label' => __('Categoria del segundo proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_2_categoria]'
+
+          ));
+          // Nombre del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_work_2_nombre]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_2_nombre', array(
+
+                'label' => __('Nombre del segundo proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_2_nombre]'
+
+          ));
+
+          // Link del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_work_2_link]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_2_link', array(
+
+                'label' => __('Enlace del segundo proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_2_link]'
+
+          ));
+
+          //Tercer trabajo - Imagen
+          $wp_customize-> add_setting('code_settings[porfolio_work_3]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control(new WP_Customize_Image_Control($wp_customize,'porfolio_work_3',array(
+
+              'label' => __('Subir imagen del tercer proyecto', 'slan'),
+              'section' => 'code_porfolio_section',
+              'settings'=>'code_settings[porfolio_work_3]'
+
+          )));
+
+          // Categoria
+          $wp_customize-> add_setting('code_settings[porfolio_work_3_categoria]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_3_categoria', array(
+
+                'label' => __('Categoria del tercer proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_3_categoria]'
+
+          ));
+          // Nombre del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_work_3_nombre]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_3_nombre', array(
+
+                'label' => __('Nombre del tercer proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_3_nombre]'
+
+          ));
+
+          // Link del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_work_3_link]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_work_3_link', array(
+
+                'label' => __('Enlace del tercer proyecto', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_work_3_link]'
+
+          ));
+          // boton del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_btn_text]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_btn_text', array(
+
+                'label' => __('Texto del botón de la sección', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_btn_text]'
+
+          ));
+
+          // link del boton del proyecto
+          $wp_customize-> add_setting('code_settings[porfolio_btn_link]', array(
+
+              'default' => '',
+              'type' => 'theme_mod'
+          ));
+
+          $wp_customize-> add_control('porfolio_btn_link', array(
+
+                'label' => __('Enlace del botón', 'slan'),
+                'section' => 'code_porfolio_section',
+                'settings'=>'code_settings[porfolio_btn_link]'
+
+          ));
+
+
+          //-----------------------------------
+          //seccion de articulos mas recientes
+          //-----------------------------------
+          $wp_customize-> add_section('code_last_post_section', array(
+
+                'title' => __('Sección de últimos artículos del blog','slan'),
+                'priority' => 15,
+                'panel' =>'code_homepage_panel'
+
+          ));
+
+          //checkbox para mostrar la secccion de blog
           $wp_customize-> add_setting('code_settings[show_last_post_section]', array(
 
                 'default' => '',

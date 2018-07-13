@@ -63,6 +63,7 @@
         </div>
       </section> <!-- Slider -->
 
+      <?php if ($show_about_section == true): ?>
       <!-- About us -->
       <section class="blurbs bg-grey">
                 <div class="contenedor">
@@ -93,10 +94,10 @@
                 </div>
       </section>
       <!-- End about us -->
+    <?php endif; ?>
 
 
-
-       <?php if ($show_blurbs_section == true): ?>
+    <?php if ($show_blurbs_section == true): ?>
 
          <section class="blurbs" id="blurbs">
            <div class="contenedor">
@@ -162,60 +163,62 @@
          </section> <!-- /Blurbs -->
        <?php endif; ?>
 
+       <?php if ( $show_porfolio_section == true ): ?>
+
        <section class="blurbs bg-grey">
                 <div class="contenedor">
                       <div class="titulo-seccions">
-                            <h1>Nuestros trabajos</h1>
-                            <p>realizamos los mejores trabajos para hacer crecer su empresa</p>
+                            <h1><?php echo $porfolio_section_tittle; ?></h1>
+                            <p><?php echo $porfolio_section_subtittle;?></p>
                       </div>
 
                       <div class="contenido-seccion">
                             <div class="project ">
-                              <img src="<?php echo $first_bluerb_image;?>" alt="">
+                              <img src="<?php echo $porfolio_work_1;?>" alt="">
                               <div class="overlay"></div>
                               <div class="porfolio-content">
-                                  <span>Proyecto 1</span>
-                                  <h1>Plantas medicinales</h1>
+                                  <span><?php echo $porfolio_work_1_categoria;?></span>
+                                  <h1><?php echo $porfolio_work_1_nombre;?></h1>
                                   <div class="porfolio-link">
-                                        <a href="#"><i class="fa fa-external-link"></i></a>
+                                        <a href="<?php echo $porfolio_work_1_link;?></h1>"><i class="fa fa-external-link"></i></a>
                                         <a href="#"><i class="fa fa-search"></i></a>
                                   </div>
                               </div>
                             </div>
 
                             <div class="project ">
-                              <img src="<?php echo $first_bluerb_image;?>" alt="">
+                              <img src="<?php echo $porfolio_work_2;?>" alt="">
                               <div class="overlay"></div>
                               <div class="porfolio-content">
-                                  <span>Proyecto 1</span>
-                                  <h1>Plantas medicinales</h1>
+                                  <span><?php echo $porfolio_work_2_categoria;?></span>
+                                  <h1><?php echo $porfolio_work_2_nombre;?></h1>
                                   <div class="porfolio-link">
-                                        <a href="#"><i class="fa fa-external-link"></i></a>
+                                        <a href="<?php echo $porfolio_work_2_link;?></h1>"><i class="fa fa-external-link"></i></a>
                                         <a href="#"><i class="fa fa-search"></i></a>
                                   </div>
                               </div>
                             </div>
 
                             <div class="project ">
-                              <img src="<?php echo $first_bluerb_image;?>" alt="">
+                              <img src="<?php echo $porfolio_work_3;?>" alt="">
                               <div class="overlay"></div>
                               <div class="porfolio-content">
-                                  <span>Proyecto 1</span>
-                                  <h1>Plantas medicinales</h1>
+                                  <span><?php echo $porfolio_work_3_categoria;?></span>
+                                  <h1><?php echo $porfolio_work_3_nombre;?></h1>
                                   <div class="porfolio-link">
-                                        <a href="#"><i class="fa fa-external-link"></i></a>
+                                        <a href="<?php echo $porfolio_work_3_link;?></h1>"><i class="fa fa-external-link"></i></a>
                                         <a href="#"><i class="fa fa-search"></i></a>
                                   </div>
                               </div>
                             </div>
-
 
                             <p class="container-btn">
-                                <a  href="#" class="link-btn">Conocer más</a>
+                                <a  href="<?php echo $porfolio_btn_link; ?>" class="link-btn"><?php echo $porfolio_btn_text; ?></a>
                             </p>
                       </div>
                 </div>
        </section>
+       <?php endif; ?>
 
        <section class="llamada-accion">
                 <div class="contenedor">
